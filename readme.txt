@@ -1,44 +1,44 @@
-JapaneseText.qlgenerator �ɂ���
+JapaneseText.qlgenerator について
 
-2008 1/8 ���R �M�V (shiro@macosx.jp)
+2008 1/8 白山 貴之 (shiro@macosx.jp)
 
-0. �͂��߂�
+0. はじめに
 
-  JapaneseText.qlgenerator �� UTI �� public.plaintext �ɕ��ނ���邢����u�e�L�X�g�t�@�C���v�ɑ΂��� QuickLook �̃v���O�C���ł��B Apple �W���� Text.qlgenerator �Ƃ̈Ⴂ�́A���{��̃G���R�[�f�B���O���������ʂ��A�K�؂ȕ����R�[�h�ł̕\�����\�ƂȂ�Ƃ��������ł��B����������΁A���{��Ɋւ��Ă͉����鎖��(�ق�)�Ȃ��Ȃ�Ƃ�������ł��B
-
-
-1. �����
-
-�E Mac OS X 10.5 �Ȃ�������ȍ~
-
-�������̂��Ƃł����AJapaneseText.qlgenerator �� QuickLook �̂Ȃ����ł͓��삵�܂���B(�Ӗ�������܂���)
+  JapaneseText.qlgenerator は UTI で public.plaintext に分類されるいわゆる「テキストファイル」に対する QuickLook のプラグインです。 Apple 標準の Text.qlgenerator との違いは、日本語のエンコーディングを自動判別し、適切な文字コードでの表示が可能となるという部分です。言い換えれば、日本語に関しては化ける事が(ほぼ)なくなるという次第です。
 
 
-2. �C���X�g�[������юg�p���@
-  �A�[�J�C�u��W�J����Ƒ��݂���uJapaneseText.qlgenerator�v���A�z�[���̉��� Library �̒��́uQuickLook�v�t�H���_�ɃR�s�[���Ă��������B
+1. 動作環境
 
-  �R�s�[�������ォ��L���ɂȂ�܂����A�L���ɂȂ��Ă��Ȃ��Ǝv����ꍇ�͈�U���O�A�E�g����A�Ȃ����͍ċN�����Ă݂Ă��������B
+・ Mac OS X 10.5 ないしそれ以降
 
-
-3. �����Ɋւ���
-
- ���{��̕����R�[�h�̌��o�ɂ��ẮAGauche �Ƃ����X�N���v�g����̕����R�[�h�F���֐��𔲂��o���Ďg���Ă���܂��B���̎莝���̃e�L�X�g�ł͌딻�f�͂���܂���ł������A�H�ȃp�^�[���Ō딻�f���N�����\���͂���܂��B�����ӂ��������B
+もちろんのことですが、JapaneseText.qlgenerator は QuickLook のない環境では動作しません。(意味もありません)
 
 
-4. ���C�Z���X�Ɋւ���
+2. インストールおよび使用方法
+  アーカイブを展開すると存在する「JapaneseText.qlgenerator」を、ホームの下の Library の中の「QuickLook」フォルダにコピーしてください。
 
-  ���̃\�t�g�E�G�A�̓t���[�E�F�A�ł��B�\�t�g�E�F�A�̍Ĕz�z��C���͎��R�ɍs���Ă��������Ă��܂��܂���B�Ȃ��Aguess.c guess_tab.c guess.h �Ɋւ��܂��ẮAShiro Kawai ���̍��ꂽ�X�N���v�g���� Gache �̃\�[�X�R�[�h�𗬗p���Ă���AShiro Kawai ���̒񎦂��郉�C�Z���X�ɏ]�����̂ƂȂ�܂��B
-
-Gauche �̃y�[�W : http://practical-scheme.net/gauche/index-j.html
-
-
-5. �o�O�A�Ȃ����̓o�O���ۂ������Ɋւ���
-
-�E �T���l�C���̍쐬�������ŁA�{���ɑ����Ă��邩�^�킵���Ƃ��낪����܂��B
+  コピーした直後から有効になりますが、有効になっていないと思われる場合は一旦ログアウトする、ないしは再起動してみてください。
 
 
-6. �X�V����
+3. 実装に関して
 
-Version 1.0 (2008 �N 1��8�� )
-�E�ŏ��̌��J�o�[�W����
+ 日本語の文字コードの検出については、Gauche というスクリプト言語の文字コード認識関数を抜き出して使っております。私の手持ちのテキストでは誤判断はありませんでしたが、稀なパターンで誤判断を起こす可能性はあります。ご注意ください。
+
+
+4. ライセンスに関して
+
+  このソフトウエアはフリーウェアです。ソフトウェアの再配布や修正は自由に行っていただいてかまいません。なお、guess.c guess_tab.c guess.h に関しましては、Shiro Kawai 氏の作られたスクリプト言語 Gache のソースコードを流用しており、Shiro Kawai 氏の提示するライセンスに従うものとなります。
+
+Gauche のページ : http://practical-scheme.net/gauche/index-j.html
+
+
+5. バグ、ないしはバグっぽい挙動に関して
+
+・ サムネイルの作成が微妙で、本文に即しているか疑わしいところがあります。
+
+
+6. 更新履歴
+
+Version 1.0 (2008 年 1月8日 )
+・最初の公開バージョン
 
