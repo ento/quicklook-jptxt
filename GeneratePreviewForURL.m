@@ -41,8 +41,8 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
             textString = (id)CFStringCreateFromExternalRepresentation( NULL, (CFDataRef)textData, encoding );
             [ textString autorelease ];
  
-            sjisData = [ textString dataUsingEncoding: [NSString defaultCStringEncoding ] ]; 
-            QLPreviewRequestSetDataRepresentation( preview,  (CFDataRef)sjisData, kUTTypePlainText, NULL );
+            sjisData = [ textString dataUsingEncoding: NSUTF16StringEncoding ]; 
+            QLPreviewRequestSetDataRepresentation( preview,  (CFDataRef)sjisData, kUTTypeUTF16PlainText, NULL );
         }
 
     }
