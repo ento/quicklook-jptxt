@@ -31,7 +31,7 @@ OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thum
     enc = guess_jp( [ textData bytes ], [ textData length ] ) ;
     if( enc != NULL )
     {
-        encoding = CFStringConvertIANACharSetNameToEncoding( [ NSString stringWithCString: enc ] );
+        encoding = CFStringConvertIANACharSetNameToEncoding( (CFStringRef)[ NSString stringWithCString: enc encoding:NSUTF8StringEncoding ] );
 
         textString = CFStringCreateFromExternalRepresentation( NULL, textData, encoding );
         [ textString autorelease ];
